@@ -7,7 +7,8 @@
 </div>
 <div class="w-full bg-gradient-to-b from-indigo-400 to-indigo-500">
   <div class="flex w-full">
-    <calculator-button isWhiteText> C </calculator-button>
+    <!-- <calculator-button isWhiteText (click)="handleClick('c')" handleClick> C </calculator-button> esto es una forma de proyectar contenido o evento -->
+    <calculator-button isWhiteText (onClickButton)="handleClick($event)"> C </calculator-button>
     <calculator-button isWhiteText> +/- </calculator-button>
     <calculator-button isWhiteText> % </calculator-button>
     <calculator-button isCommand isCommand> ÷ </calculator-button>

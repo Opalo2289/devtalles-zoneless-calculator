@@ -1,6 +1,11 @@
 <!-- <div class="w-1/4 border-r border-b border-indigo-400"> --> <!--Esto es lo que se reemplaza en el componente-->
 
-<button [class.is-command]="isCommand()" [class.is-WhiteText]="isWhiteText()">
+<button
+[class.is-command]="isCommand()"
+[class.is-WhiteText]="isWhiteText()"
+(click)="handleClickl()"
+#button
+>
   <ng-content></ng-content>
 </button>
 
