@@ -9,3 +9,7 @@ button {
 .is-WhiteText {
   @apply text-white
 }
+
+.is-pressed {
+  @apply bg-indigo-800 bg-opacity-20 text-white;
+}
