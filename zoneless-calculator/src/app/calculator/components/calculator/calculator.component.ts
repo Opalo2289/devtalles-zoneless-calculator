@@ -37,8 +37,8 @@ export default class CalculatorComponent {
     const keyEquivalents: Record<string, string> = {
       Backspace: 'Backspace',
       c: 'C',
-      '*': 'x',
-      '/': '÷',
+      'Invcalid input x': '*',
+      'Invcalid input ÷': '÷',
       Enter: '=',
       x:'+/-'
     }
