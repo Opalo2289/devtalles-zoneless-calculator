@@ -48,7 +48,6 @@ describe('AppComponent', () => {
     const debugEl = fixture.debugElement.query(By.css('[data-testid="beer-link"]'));
     const nativeEl: HTMLAnchorElement = debugEl.nativeElement;
 
-    console.log('Data test id:', nativeEl.getAttribute('data-testid'))
     expect(nativeEl.getAttribute('data-testid')).toBe('beer-link');
   });
 });
