@@ -5,6 +5,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import CalculatorComponent from './calculator.component';
 import { CalculatorService } from '@/calculator/services/calculator.service';
+import { By } from '@angular/platform-browser';
+import { CalculatorButtonComponent } from '../calculator-button/calculator-button.component';
 
 
 class calculatorServiceMock {
@@ -51,9 +53,39 @@ describe('CalculatorComponent', () => {
 
     fixture.detectChanges()
 
-    expect(component.resultText()).toBe('100');
+    expect(component.resultText()).toBe('20');
     expect(component.subResultText()).toBe('0');
     expect(component.lastOperator()).toBe('+');
   });
+
+
+  it('calculator component deberia tener 19 botones', () => {
+    expect(component.calculatorButtons().length).toBe(19)
+  });
+
+  it('calculator component deberia tener 19 botones DEBUG', () => {
+    const buttonsElements = compiled.querySelectorAll('calculator-button')
+
+    const buttonsElementsDirective = fixture.debugElement.queryAll(
+      By.directive(CalculatorButtonComponent)
+    )
+    expect(component.calculatorButtons().length).toBe(19)
+
+    expect(buttonsElements[0]?.textContent?.trim()).toBe('C')
+
+
+    // console.log({buttonsElements})
+    // console.log({buttonsElementsDirective})
+
+  });
+
+  it('deberia presionar la tecla correcta', () => {
+
+    const eventEnter = new KeyboardEvent('keyup', { key: 'Backspace' });
+    document.dispatchEvent(eventEnter);
+
+    expect(mockCalculatorService.construcNumber).toHaveBeenCalledWith('Backspace');
+  });
+
 
 });
