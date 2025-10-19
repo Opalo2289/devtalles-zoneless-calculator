@@ -2,3 +2,8 @@
   base = "server-site-render/SSR"
   command = "npm run build"
   publish = "dist/ssr/browser"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
