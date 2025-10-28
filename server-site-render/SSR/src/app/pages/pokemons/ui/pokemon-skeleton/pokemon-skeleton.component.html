@@ -1,0 +1,23 @@
+<div class="grid gap-3 grid-cols-1 sm:grid-cols-3 md:grid-cols-5">
+
+  @for( pokemons of '123456789012'.split(''); track $index){
+
+  <div
+    class="bg-white h-44 bg-opacity-25 rounded-lg shadow-sm flex flex-col justify-center items-center p-4 cursor-pointer   animate-pulse">
+
+    <div class="bg-gray-300 h-24 w-24 mb-2 rounded-full"></div>
+
+    <div class="flex text-center mt-5">
+      <div class="h-4 w-20 bg-gray-300 rounded animate-pulse"></div>
+    </div>
+
+  </div>
+
+  }
+
+
+  <div class="col-span-5 text-center border-white h-28 flex justify-center items-center">
+    No hay pokemons que mostrar
+  </div>
+
+</div>

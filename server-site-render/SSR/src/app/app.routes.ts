@@ -15,6 +15,10 @@ export const routes: Routes = [
     "loadComponent": () => import("./pages/about-pages/about-pages.component").then(c => c.AboutPagesComponent)
   },
   {
+    "path": "pokemons",
+    loadComponent: () => import("./pages/pokemons/pokemons-pages.component")
+  },
+  {
     "path": "",
     "redirectTo": "about",
     "pathMatch": "full"
