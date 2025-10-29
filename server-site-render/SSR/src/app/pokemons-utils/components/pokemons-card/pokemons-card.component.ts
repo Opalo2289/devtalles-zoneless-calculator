@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, computed, input } from '@angular/core';
 import { SimplePokemon } from '../../interfaces';
 
 @Component({
@@ -10,4 +10,7 @@ import { SimplePokemon } from '../../interfaces';
 })
 export class PokemonsCardComponent {
   public inputPokeCard = input.required<SimplePokemon>();
+  public pokemonsImage = computed(() => {
+    return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.inputPokeCard().id}.png`;
+  })
 }
