@@ -5,11 +5,11 @@
 
 <!-- todo: pokemons list -->
 
-<!-- @if(!isLoading()) { -->
+@if(pokemonsview().length !== 0) {
   <app-pokemons-list [inputPokemons]="pokemonsview()"/>
-<!-- }@else {
+}@else {
   <app-pokemon-skeleton></app-pokemon-skeleton>
-} -->
+}
 
 
 <div class="flex justify-between">
