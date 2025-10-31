@@ -40,4 +40,4 @@ export default class PokemonPageDetailComponent implements OnInit {
       this.pokeDetail.set(pokemon)
     })
   }
-}
+};
