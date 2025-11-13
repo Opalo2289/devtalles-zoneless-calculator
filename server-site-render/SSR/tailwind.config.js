@@ -1,5 +1,3 @@
-const { animation } = require('@angular/animations');
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -16,9 +14,9 @@ module.exports = {
             opacity: 1,
           }
         },
-        animation: {
-          fadeIn: 'fadeIn .2s ease-in-out'
-        }
+      },
+      animation: {
+        fadeIn: 'fadeIn .2s ease-in-out'
       }
     },
   },
