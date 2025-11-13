@@ -1,16 +1,18 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { PokemonsDetail } from '../../pokemons-utils/interfaces';
 import { PokeApiService } from '../../pokemons-utils/services/poke-api.service';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs';
 import { Meta, Title } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-pokemon-page-detail',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './pokemon-page-detail.component.html',
-  styleUrl: './pokemon-page-detail.component.css'
+  styleUrl: './pokemon-page-detail.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export default class PokemonPageDetailComponent implements OnInit {
   public pokeDetail = signal<PokemonsDetail | null>(null)
