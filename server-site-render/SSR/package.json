@@ -4,11 +4,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run prerender:routes && ng build",
     "postbuild": "cp server-site-render/SSR/dist/ssr/browser/index.csr.html server-site-render/SSR/dist/ssr/browser/index.html || echo 'index.csr.html not found'",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:SSR": "node dist/ssr/server/server.mjs"
+    "serve:ssr:SSR": "node dist/ssr/server/server.mjs",
+    "prerender:routes": "node script/prerender-routes.js"
   },
   "private": true,
   "dependencies": {

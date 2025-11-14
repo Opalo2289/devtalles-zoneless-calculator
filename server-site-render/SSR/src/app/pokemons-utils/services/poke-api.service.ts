@@ -19,7 +19,7 @@ export class PokeApiService {
     page = Math.max(0, page);
 
     return this.http.get<PokemonApiResponse>(
-      `${this.BASE_URL}/pokemon?offset=${page * 20}0&limit=20`
+      `${this.BASE_URL}/pokemon?offset=${page * 20}&limit=20`
     ).pipe(
       map( reponse => {
         const pokemons: SimplePokemon[] = reponse.results.map(pokemon => ({

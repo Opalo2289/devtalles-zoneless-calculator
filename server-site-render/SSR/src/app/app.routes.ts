@@ -14,8 +14,13 @@ export const routes: Routes = [
     "path": "about",
     "loadComponent": () => import("./pages/about-pages/about-pages.component").then(c => c.AboutPagesComponent)
   },
+  // {
+  //   "path": "pokemons",
+  //   loadComponent: () => import("./pages/pokemons/pokemons-pages.component")
+  // },
+  // navegacion por segmento de rutas
   {
-    "path": "pokemons",
+    "path": "pokemons/page/:page",
     loadComponent: () => import("./pages/pokemons/pokemons-pages.component")
   },
   {
